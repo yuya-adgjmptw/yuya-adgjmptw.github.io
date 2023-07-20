@@ -124,16 +124,17 @@
     </div>
     <div>
       <div class="mx-5 h3 border-bottom">遊び方解説</div>
-      <div class="text-center align-items-center row my-sm-3 mx-5">
+      <div class="align-items-center row my-sm-3 mx-5">
       <div class="bg-light card col-6 col-md-4 col-lg-3 border border-5 border-white" v-for='item in how'>
         <a :href='item.url'>
           <img :src='item.img' class="card-img-top my-3 rounded-0">
         </a>
         <div class="card-body d-none d-sm-block">
-          <p class="card-text">{{item.title}}</p>
+          <p class="card-text text-center">{{item.title}}</p>
         </div>
         <a :href='item.url' class="btn btn-info text-white d-block d-sm-none m-3">{{item.title}}</a>
         <a :href='item.url' class="btn btn-info text-white d-none d-sm-block m-3">View</a>
+        <small class="text-muted">最終更新日：{{item.  finalday}}</small>
       </div>
   </div>
     </div>
@@ -147,7 +148,7 @@
       <div class="card-body">
         <p class="card-text"><b>{{item.title}}</b></p>
       </div>
-        <small class="text-muted">{{item.day}}</small>
+        <small class="text-muted float-end">投稿日：{{item.day}}</small>
       </a>
     </div>
 </div>
@@ -190,16 +191,19 @@
             how: [
                 {
                     "title": "RealTrainMOD",
+                    "finalday":"2023/7/21",
                     "img":"../img/RTM/11.png",
                     "url": "//www.tohoho-web.com/bootstrap5/index.html"
                 },
                 {
                     "title": "ImmersiveVehiclesMOD",
+                    "finalday":"2023/7/21",
                     "img":"../img/vehicle/1.png",
                     "url": "//www.tohoho-web.com/bootstrap5/index.html"
                 },
                 {
                     "title": "ProjectRedMOD",
+                    "finalday":"2023/7/21",
                     "img":"../img/projectred/11.png",
                     "url": "//www.tohoho-web.com/bootstrap5/index.html"
                 },
