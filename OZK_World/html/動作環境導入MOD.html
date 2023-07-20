@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>OZK_RTM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script type="text/javascript" src="js/vue.dev.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-THJHMS28B8"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-THJHMS28B8');
+  </script>
+</head>
+<body>
+
+<div  id="vue">
+  <header class="sticky-top border-bottom">
+    <div class="row m-0 bg-white" v-for='item in top'>
+      <a class="btn rounded-0 col-12 col-lg-2 text-white text-center d-none d-sm-block bg-dark" href="OZK_world.html"
+         role="button"><h1>{{item.name}}</h1></a>
+      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end"
+         href="YouTube.html" role="button"><h6>{{item.name1}}</h6></a>
+      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end" href="#" role="button"><h6>
+        {{item.name2}}</h6></a>
+      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end" href="動作環境導入MOD.html"
+         role="button"><h6>{{item.name3}}</h6></a>
+      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center" href="#" role="button"><h6>
+        {{item.name4}}</h6></a>
+    </div>
+    <div class="d-block d-sm-none border text-center">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="OZK_world.html">OZK</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Navber"
+                  aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="Navber" v-for='item in top'>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href=OZK_world.html>TOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"
+                   href="YouTube.html">{{item.name1}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{item.name2}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="動作環境導入MOD.html">{{item.name3}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{item.name4}}</a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+    </div>
+  </header>
+  <div class="card bg-dark text-white rounded-0" style="width: auto; height: auto;">
+    <img src="../img/導入MOD一覧/roji%20acloss.png" class="card-img" alt="icon image">
+    <div class="card-img-overlay d-flex">
+      <div class="m-auto">
+        <h2 class="card-title">動作環境 / 導入MOD一覧</h2>
+      </div>
+    </div>
+  </div>
+
+  <main class="container-fluid">
+  <div class="m-5">
+    <div class="my-3 h3 border-bottom table-warning">動作環境</div>
+    <table class="table text-center">
+      <thead>
+      <tr><th>PCスペック</th></tr>
+      </thead>
+      <tbody>
+      <tr v-for='item in head'>
+        <th scope="row">{{item.項目}}</th>
+        <td>{{item.名前}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <table class="table text-center">
+      <thead>
+      <tr><th>Minecraft</th></tr>
+      </thead>
+      <tbody>
+      <tr v-for='item in minecraft'>
+        <th scope="row">{{item.項目}}</th>
+        <td>{{item.名前}}</td>
+      </tr>
+      </tbody>
+    </table>
+<br><br>
+    <div class="mt-5 h3 border-bottom">導入MOD一覧</div>
+    <table class="table text-center">
+      <thead>
+      <tr><th>MOD名</th><th>Ver</th><th>説明</th><th>前提MOD</th><th>追加アドオン</th><th>配布サイト</th></tr>
+      </thead>
+      <tbody>
+      <tr  v-for='item in MOD'>
+        <td>{{item.name}}</td><td>{{item.ver}}</td><td>{{item.説明}}</td><td>{{item.前提}}</td><td>{{item.add}}</td>
+        <td><a :href='item.配布' class="link-dark">配布サイトへ</a></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+</main>
+
+
+<footer class="fixed-bottom bg-secondary bg-opacity-75 text-center text-white align-items-center">
+  <h6>@OZK 2023</h6>
+</footer>
+
+</div>
+<script type="text/javascript">
+    new Vue({
+        el: '#vue',
+        data: {
+            top: [
+                {
+                    "name": "OZK",
+                    "name1": "YouTube",
+                    "name2": "○○ワールド進捗",
+                    "name3": "動作環境/導入MOD",
+                    "name4": "サイト概要",
+                },
+            ],
+            head: [
+                {
+                    "項目": "OS",
+                    "名前": "Windows10",
+                },
+                {
+                    "項目": "CPU",
+                    "名前": "Ryzen7 3700x",
+                },
+                {
+                    "項目": "GPU",
+                    "名前": "GeForce RTX 2060 SUPER",
+                },
+                {
+                    "項目": "RAM",
+                    "名前": "64GB",
+                },
+                {
+                    "項目": "ストレージ",
+                    "名前": "SSD 1TB",
+                },
+                {
+                    "項目": "解像度",
+                    "名前": "1980×1080",
+                },
+            ],
+
+            minecraft: [
+                {
+                    "項目": "Version",
+                    "名前": "1.12.2-forge-14.23.5.2860",
+                },
+                {
+                    "項目":"RAM割り当て",
+                    "名前": "64GB",
+                },
+                {
+                    "項目": "表示チャンク(作業時)",
+                    "名前": "4チャンク",
+                },
+                {
+                    "項目": "表示チャンク(撮影時)",
+                    "名前": "64チャンク～",
+                },
+            ],
+            MOD: [
+                {"name": "RealTrainMOD",
+                    "説明": "鉄道を追加します。",
+                    "ver": "1.12.2",
+                    "前提": "あり",
+                    "add": "あり",
+                    "配布": "https://www.nintendo.co.jp/",
+                },
+                {"name": "RealTrainMOD",
+                    "説明": "鉄道を追加します。",
+                    "ver": "1.12.2",
+                    "前提": "あり",
+                    "add": "あり",
+                    "配布": "https://www.nintendo.co.jp/",
+                },
+                ]}
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
