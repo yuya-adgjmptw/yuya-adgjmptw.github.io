@@ -26,18 +26,12 @@
 
 <div id="vue">
   <header class="sticky-top border-bottom">
-    <div class="row m-0 bg-white" v-for='item in top'>
+    <div class="row m-0 bg-white">
       <a class="btn rounded-0 col-12 col-lg-2 text-white text-center d-none d-sm-block bg-dark" href="OZK_world.html"
-         role="button"><h4>{{item.name}}</h4></a>
-      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end"
-         href="YouTube.html" role="button"><h6>{{item.name1}}</h6></a>
-      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end" href="#" role="button"><h6>
-        {{item.name2}}</h6></a>
-      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end" href="動作環境導入MOD.html"
-         role="button"><h6>{{item.name3}}</h6></a>
-      <a class="btn col bg-white rounded-0 d-none d-sm-block align-self-center" href="#" role="button"><h6>
-        {{item.name4}}</h6></a>
+         role="button"><h4>OZK</h4></a>
+      <a :href='item.url' class="btn col bg-white rounded-0 d-none d-sm-block align-self-center border-end" role="button"  v-for='item in top'><h6>{{item.name}}</h6></a>
     </div>
+
     <div class="d-block d-sm-none border text-center">
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
@@ -46,23 +40,14 @@
                   aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="Navber" v-for='item in top'>
+          <div class="collapse navbar-collapse" id="Navber">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href=OZK_world.html>TOP</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page"
-                   href="YouTube.html">{{item.name1}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">{{item.name2}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="動作環境導入MOD.html">{{item.name3}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">{{item.name4}}</a>
+                   :href='item.url' v-for='item in top'>{{item.name}}</a>
               </li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -71,6 +56,8 @@
 
     </div>
   </header>
+
+
   <div id="carouselExampleControls" class="carousel slide carousel-fade d-none d-sm-block">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -120,14 +107,14 @@
 
     <div class="m-5 text-center align-items-center">
       <div class="h1">ようこそ！</div>
-      <div class="h6 m-md-3 my-5">様々なMODパックを利用してリアルなマイクラワールドを作っています！</div>
+      <div class="h6 m-md-3 my-5" id="遊び方解説">様々なMODパックを利用してリアルなマイクラワールドを作っています！</div>
     </div>
     <div>
       <div class="mx-5 h3 border-bottom">遊び方解説</div>
       <div class="align-items-center row my-sm-3 mx-5">
       <div class="bg-light card col-6 col-md-4 col-lg-3 border border-5 border-white" v-for='item in how'>
         <a :href='item.url'>
-          <img :src='item.img' class="card-img-top my-3 rounded-0">
+          <img :src='item.img' alt="画像" class="card-img-top my-3 rounded-0">
         </a>
         <div class="card-body d-none d-sm-block">
           <p class="card-text text-center">{{item.title}}</p>
@@ -144,27 +131,17 @@
     <div class="row mb-5 mx-5">
     <div class="col-6 col-md-4 col-lg-3 card border-0 border-bottom rounded-0 my-3" v-for='item in contents'>
       <a :href='item.url' class="link-dark text-decoration-none">
-      <img :src='item.img' alt="画像" class="card-img-top rounded-0">
+        <div v-for="img in item.img">
+      <img :src='img.img' alt="画像" class="card-img-top rounded-0">
+        </div>
       <div class="card-body">
-        <p class="card-text"><b>{{item.title}}</b></p>
+        <p class="card-text"><b>{{item.genre}}{{item.title}}</b></p>
       </div>
         <small class="text-muted float-end">投稿日：{{item.day}}</small>
       </a>
     </div>
 </div>
-    <div class="m-5">
-      <table class="table">
-        <thead>
-        <tr><th>進捗</th><th>投稿日</th></tr>
-        </thead>
-        <tbody>
-        <tr  v-for='item in contents'>
-          <td><a :href='item.url'>{{item.title}}</a></td>
-          <td>{{item.day}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+
   </main>
 
   <footer class="fixed-bottom bg-secondary bg-opacity-75 text-center text-white align-items-center">
@@ -180,11 +157,24 @@
 
             top: [
                 {
-                    "name": "OZK",
-                    "name1": "YouTube",
-                    "name2": "○○ワールド進捗",
-                    "name3": "動作環境/導入MOD",
-                    "name4": "サイト概要",
+                    "name": "YouTube",
+                    "url": "../html/YouTube.html",
+                },
+                {
+                    "name": "遊び方解説",
+                    "url": "../html/OZK_world.html#遊び方解説",
+                },
+                {
+                    "name": "動作環境/導入MOD",
+                    "url": "../html/動作環境導入MOD.html",
+                },
+                {
+                    "name": "ワールド紹介",
+                    "url": "../html/ワールド紹介.html",
+                },
+                {
+                    "name": "サイト概要",
+                    "url": "../html/サイト概要.html",
                 },
             ],
 
@@ -193,40 +183,56 @@
                     "title": "RealTrainMOD",
                     "finalday":"2023/7/21",
                     "img":"../img/RTM/11.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "url": "../html/遊び方解説/RealTrainMOD.html"
                 },
                 {
                     "title": "ImmersiveVehiclesMOD",
                     "finalday":"2023/7/21",
                     "img":"../img/vehicle/1.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "url": "../html/遊び方解説/ImmersiveVehiclesMOD.html"
                 },
                 {
                     "title": "ProjectRedMOD",
                     "finalday":"2023/7/21",
                     "img":"../img/projectred/11.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "url": "../html/遊び方解説/ProjectRedMOD"
                 },
             ],
 
             contents: [
                 {
-                    "title": "【ワールド紹介】高架",
-                    "day":"2023/7/17",
-                    "img":"../img/top/new topics/高架.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "genre":"【ワールド紹介】",
+                    "first":"show",
+                    "title": "建築たくさんした",
+                    "id": "#建築たくさんした",
+                    "text": "建築をたくさんしたのでその一部を紹介",
+                    "day": "2023/7/17",
+                    "url":"../html/ワールド紹介.html#建築たくさんした",
+                    "img": [
+                        {"img": "../img/topics/2023-7-17-1st.png"},
+                    ]
                 },
                 {
-                    "title": "【ワールド紹介】踏切",
-                    "day":"2023/7/11",
-                    "img":"../img/top/new topics/踏切.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "genre":"【ワールド紹介】",
+                    "title": "踏切完成",
+                    "id": "#踏切完成",
+                    "text": "東海道線、貨物船、宗谷線が通る踏切を完成させました。それぞれの路線から来る列車を検知し遮断機、警報機が作動します。",
+                    "day": "2023/7/11",
+                    "url":"../html/ワールド紹介.html#踏切完成",
+                    "img": [
+                        {"img": "../img/topics/2023-7-11-1st.png"},
+                    ]
                 },
                 {
-                    "title": "【ワールド紹介】建築物",
-                    "day":"2023/7/3",
-                    "img":"../img/top/new topics/建物.png",
-                    "url": "//www.tohoho-web.com/bootstrap5/index.html"
+                    "genre":"【ワールド紹介】",
+                    "title": "高架開始",
+                    "id": "#高架開始",
+                    "text": "東海道線を延伸し複数の道路と交差することが予想されたため、高架化することにしました。",
+                    "day": "2023/7/3",
+                    "url":"../html/ワールド紹介.html#高架開始",
+                    "img": [
+                        {"img": "../img/topics/2023-7-3-1st.png"},
+                    ]
                 },
             ],
 
