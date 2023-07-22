@@ -52,11 +52,15 @@
               </li>
 
               <li class="nav-item dropdown" v-for='item in top'>
-                <a :href='item.url' class="nav-link active" :class='item.mini' :id='item.id' :role='item.role' :data-bs-toggle='item.databstoggle' :aria-expanded='item.ariaexpanded'>{{item.name}}</a>
+                <a :href='item.url' class="nav-link active" :class='item.mini' :id='item.id' :role='item.role'
+                   :data-bs-toggle='item.databstoggle' :aria-expanded='item.ariaexpanded'>{{item.name}}</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" :href='item.url'>{{item.name}}</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" v-for="details in item.details" :href='details.url'>{{details.name}}</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" v-for="details in item.details" :href='details.url'>{{details.name}}</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -67,15 +71,126 @@
     </div>
   </header>
   <div class="card bg-dark text-white rounded-0 w-100">
-    <img src="../../img/RTM解説.png" class="card-img" alt="icon image">
+    <img src="../../img/解説/RTM/RTM解説.png" class="card-img" alt="icon image">
     <div class="card-img-overlay d-flex">
       <div class="m-auto">
         <div class="card-title text-center h2">
-          <div class="border-bottom">遊び方解説</div><div>RealTrainMOD</div>
+          <div class="border-bottom">遊び方解説</div>
+          <div>RealTrainMOD</div>
         </div>
       </div>
     </div>
   </div>
+
+
+  <main class="m-5 mx-sm-5">
+    <div class="h3 border-bottom">解説</div>
+    <div class="accordion" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target=#RTM1
+                  aria-expanded="false" aria-controls=RTM1>
+            #1：線路敷設
+          </button>
+        </h2>
+        <div id=RTM1 class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <img src="../../img/解説/RTM/%231線路敷設/%231-1.png" alt="">
+            <p>線路の敷設には「マーカー」「分岐マーカー」「レール」この三つのアイテムを使います。</p><br>
+            <div class="row">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-2.png" alt="">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-3.png" alt="">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-4.png" alt="">
+            </div>
+            <p>
+              直線のレールを引くには「マーカー」を写真のように、矢印が互いに向き合うように2つ設置し、「レール」を手に持った状態で設置したいずれかのマーカー右クリックすると、設置した「マーカー」の距離に応じて敷設されます。</p>
+            <br>
+            <div class="row">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-5.png" alt="">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-6.png" alt="">
+            </div>
+            <p>レールはデフォルトで様々な種類が収録されています。</p><br>
+            <div class="row">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-7.png" alt="">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-8.png" alt="">
+              <img class="col-6 col-md-4" src="../../img/解説/RTM/%231線路敷設/%231-9.png" alt="">
+            </div>
+            <p>また、「レール用作業台」を使用することでレールの下地を変更できます。</p>
+            <small class="text-muted text-end">投稿日：2023/7/22</small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target=#RTM2
+                  aria-expanded="false" aria-controls=RTM2>
+            #2：特殊な線路敷設
+          </button>
+        </h2>
+        <div id=RTM2 class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="h2 p">・カーブと斜め</div>
+            <div class="p">線路は様々な形で敷設ができます。</div>
+            <div class="p">カーブは「マーカー」の矢印の交点が直角になるように設置、斜めの場合は「斜めのマーカー」を互いの矢印が向き合うように設置します。</div><br>
+            カーブ
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-10.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-11.png" alt="">
+            </div>
+            斜め
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-12.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-13.png" alt="">
+            </div>
+            <br>
+            <div class="h2 p">・三線式分岐器</div>
+            <div class="p">分岐レールを敷設する場合は「分岐マーカー」を使用します。</div>
+            <div class="p">分岐元を「分岐マーカー」、分岐先を「マーカー」設置し、線路を敷設すると分岐のある線路が完成します。 </div>
+            <div class="p">分岐元の「分岐マーカー」直下のブロックにレッドストーン信号を与えると分岐を動かせます。</div>
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-14.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-15.png" alt="">
+            </div><br>
+            <div class="p">分岐元の「分岐マーカー」直下のブロックにレッドストーン信号を与えると分岐を動かせます。</div>
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-16.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-17.png" alt="">
+            </div>
+            <br>
+            <div class="h2 p">・シーサースクロッシング</div>
+            <div class="p">「分岐マーカー」を二方向に２つずつ設置することでシーサースクロッシングを敷設できます。</div>
+            <div class="p">三線分岐同様、それぞれの「分岐マーカー」直下のブロックにレッドストーン信号を与えることで分岐を動かせます。</div>
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-23.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-24.png" alt="">
+            </div><br>
+            <div class="h2 p">・クロッシングレール</div>
+            <div class="p">「分岐マーカー」を四方向から内側を向くように設置することでクロッシングレールを敷設できます。</div>
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-21.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-22.png" alt="">
+            </div><br>
+            <div class="h2 p">・カントレール</div>
+            <div class="p">「マーカー」設置後に表示される、「LINE1：OFF」を右クリックし、「LINE：ON」に切り替える。</div>
+            <div class="p">ピンク色の棒が表示されるので、それを右クリックし角度を調整、再度右クリックを押して固定し、敷設するとカントレールが敷設できます。</div>
+            <div class="row">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-25.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-26.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-27.png" alt="">
+              <img class="col-6 my-2" src="../../img/解説/RTM/%231線路敷設/%231-28.png" alt="">
+            </div><br>
+
+            <small class="text-muted text-end">投稿日：2023/7/22</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </main>
 </div>
 
 <footer class="fixed-bottom bg-secondary bg-opacity-75 text-center text-white align-items-center">
@@ -94,15 +209,15 @@
                     "name": "遊び方解説",
                     "url": "../../html/OZK_world.html#遊び方解説",
                     "add": "btn dropdown-toggle dropdown-toggle-split",
-                    "mini":"dropdown-toggle",
-                    "id":"navbarDropdown",
-                    "role":"button",
-                    "databstoggle":"dropdown",
-                    "ariaexpanded":"false",
+                    "mini": "dropdown-toggle",
+                    "id": "navbarDropdown",
+                    "role": "button",
+                    "databstoggle": "dropdown",
+                    "ariaexpanded": "false",
                     "details": [
-                        {"name": "RealTrainMOD","url":"../遊び方解説/RealTrainMOD.html"},
-                        {"name": "ImmersiveVehiclesMOD","url":"../遊び方解説/ImmersiveVehiclesMOD.html"},
-                        {"name": "ProjectRedMOD","url":"../遊び方解説/ProjectRedMOD.html"},
+                        {"name": "RealTrainMOD", "url": "../遊び方解説/RealTrainMOD.html"},
+                        {"name": "ImmersiveVehiclesMOD", "url": "../遊び方解説/ImmersiveVehiclesMOD.html"},
+                        {"name": "ProjectRedMOD", "url": "../遊び方解説/ProjectRedMOD.html"},
                     ],
                 },
                 {
